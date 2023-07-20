@@ -1,3 +1,45 @@
+final json = {
+  "weight": {
+    "imperial": "5 - 11",
+    "metric": "2 - 5"
+  },
+  "id": "sfol",
+  "name": "Scottish Fold",
+  "cfa_url": "http://cfa.org/Breeds/BreedsSthruT/ScottishFold.aspx",
+  "vetstreet_url": "http://www.vetstreet.com/cats/scottish-fold-highland-fold",
+  "vcahospitals_url": "https://vcahospitals.com/know-your-pet/cat-breeds/scottish-fold",
+  "temperament": "Affectionate, Intelligent, Loyal, Playful, Social, Sweet, Loving",
+  "origin": "United Kingdom",
+  "country_codes": "GB",
+  "country_code": "GB",
+  "description": "The Scottish Fold is a sweet, charming breed. She is an easy cat to live with and to care for. She is affectionate and is comfortable with all members of her family. Her tail should be handled gently. Folds are known for sleeping on their backs, and for sitting with their legs stretched out and their paws on their belly. This is called the \"Buddha Position\".",
+  "life_span": "11 - 14",
+  "indoor": 0,
+  "alt_names": "Scot Fold",
+  "adaptability": 5,
+  "affection_level": 5,
+  "child_friendly": 4,
+  "dog_friendly": 5,
+  "energy_level": 3,
+  "grooming": 1,
+  "health_issues": 4,
+  "intelligence": 3,
+  "shedding_level": 3,
+  "social_needs": 3,
+  "stranger_friendly": 3,
+  "vocalisation": 1,
+  "experimental": 0,
+  "hairless": 0,
+  "natural": 0,
+  "rare": 0,
+  "rex": 0,
+  "suppressed_tail": 0,
+  "short_legs": 0,
+  "wikipedia_url": "https://en.wikipedia.org/wiki/Scottish_Fold",
+  "hypoallergenic": 0,
+  "reference_image_id": "o9t0LDcsa"
+};
+
 class User {
   int id;
   String firstName;
@@ -328,7 +370,6 @@ class Coordinates {
     };
   }
 }
-
 
 class ApiResponse {
   List<User> users;
