@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<User> users = [];
+  int exitCounter = 0;
   int page = 0;
   int limit = 20;
   int total = 100;
@@ -46,26 +48,45 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Users"),
-      ),
-      body: Stack(
-        children: [
-          ListView.builder(
-            controller: controller,
-            padding: const EdgeInsets.all(20),
-            itemCount: users.length,
-            itemBuilder: (context, index) {
-              final user = users[index];
-              return UserCard(user: user);
-            },
+    return WillPopScope(
+      onWillPop: () async {
+        Timer(const Duration(seconds: 1), () {
+          exitCounter = 0;
+        });
+        exitCounter++;
+        if(exitCounter >= 2) {
+          return true;
+        }
+        return false;
+      },
+      child: RefreshIndicator(
+        onRefresh: () async {
+          users = [];
+          page = 0;
+          getAllUsers();
+        },
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text("Users"),
           ),
-          if (isLoading)
-            const Center(
-              child: CircularProgressIndicator(),
-            ),
-        ],
+          body: Stack(
+            children: [
+              ListView.builder(
+                controller: controller,
+                padding: const EdgeInsets.all(20),
+                itemCount: users.length,
+                itemBuilder: (context, index) {
+                  final user = users[index];
+                  return UserCard(user: user);
+                },
+              ),
+              if (isLoading)
+                const Center(
+                  child: CircularProgressIndicator(),
+                ),
+            ],
+          ),
+        ),
       ),
     );
   }
