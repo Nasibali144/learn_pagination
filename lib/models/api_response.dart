@@ -1,3 +1,5 @@
+import 'package:json_annotation/json_annotation.dart';
+
 final json = {
   "weight": {
     "imperial": "5 - 11",
@@ -402,3 +404,4 @@ class ApiResponse {
     );
   }
 }
+

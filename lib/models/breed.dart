@@ -5,6 +5,7 @@ part 'breed.g.dart';
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class Breed {
+  @JsonKey(name: "_id")
   final Weight weight;
   final String id;
   final String name;

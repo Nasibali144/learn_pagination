@@ -7,7 +7,7 @@ part of 'breed.dart';
 // **************************************************************************
 
 Breed _$BreedFromJson(Map<String, dynamic> json) => Breed(
-      weight: Weight.fromJson(json['weight'] as Map<String, dynamic>),
+      weight: Weight.fromJson(json['_id'] as Map<String, dynamic>),
       id: json['id'] as String,
       name: json['name'] as String,
       cfaUrl: json['cfa_url'] as String,
@@ -46,7 +46,7 @@ Breed _$BreedFromJson(Map<String, dynamic> json) => Breed(
     );
 
 Map<String, dynamic> _$BreedToJson(Breed instance) => <String, dynamic>{
-      'weight': instance.weight.toJson(),
+      '_id': instance.weight.toJson(),
       'id': instance.id,
       'name': instance.name,
       'cfa_url': instance.cfaUrl,
