@@ -6,8 +6,8 @@ part of 'breed.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Breed _$BreedFromJson(Map<String, dynamic> json) => Breed(
-      weight: Weight.fromJson(json['_id'] as Map<String, dynamic>),
+_$_Breed _$$_BreedFromJson(Map<String, dynamic> json) => _$_Breed(
+      weight: Weight.fromJson(json['weight'] as Map<String, dynamic>),
       id: json['id'] as String,
       name: json['name'] as String,
       cfaUrl: json['cfa_url'] as String,
@@ -45,8 +45,8 @@ Breed _$BreedFromJson(Map<String, dynamic> json) => Breed(
       referenceImageId: json['reference_image_id'] as String,
     );
 
-Map<String, dynamic> _$BreedToJson(Breed instance) => <String, dynamic>{
-      '_id': instance.weight.toJson(),
+Map<String, dynamic> _$$_BreedToJson(_$_Breed instance) => <String, dynamic>{
+      'weight': instance.weight.toJson(),
       'id': instance.id,
       'name': instance.name,
       'cfa_url': instance.cfaUrl,

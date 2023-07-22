@@ -6,12 +6,12 @@ part of 'weight.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Weight _$WeightFromJson(Map<String, dynamic> json) => Weight(
+_$_Weight _$$_WeightFromJson(Map<String, dynamic> json) => _$_Weight(
       imperial: json['imperial'] as String,
       metric: json['metric'] as String,
     );
 
-Map<String, dynamic> _$WeightToJson(Weight instance) => <String, dynamic>{
+Map<String, dynamic> _$$_WeightToJson(_$_Weight instance) => <String, dynamic>{
       'imperial': instance.imperial,
       'metric': instance.metric,
     };
