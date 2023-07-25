@@ -41,9 +41,9 @@ class Breed with _$Breed{
     required int rex,
     required int suppressedTail,
     required int shortLegs,
-    required String wikipediaUrl,
+    required String? wikipediaUrl,
     required int hypoallergenic,
-    required String referenceImageId,
+    required String? referenceImageId,
   }) = _Breed;
 
   factory Breed.fromJson(Map<String, Object?> json) => _$BreedFromJson(json);

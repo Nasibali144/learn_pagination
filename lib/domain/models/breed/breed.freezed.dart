@@ -53,9 +53,9 @@ mixin _$Breed {
   int get rex => throw _privateConstructorUsedError;
   int get suppressedTail => throw _privateConstructorUsedError;
   int get shortLegs => throw _privateConstructorUsedError;
-  String get wikipediaUrl => throw _privateConstructorUsedError;
+  String? get wikipediaUrl => throw _privateConstructorUsedError;
   int get hypoallergenic => throw _privateConstructorUsedError;
-  String get referenceImageId => throw _privateConstructorUsedError;
+  String? get referenceImageId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -101,9 +101,9 @@ abstract class $BreedCopyWith<$Res> {
       int rex,
       int suppressedTail,
       int shortLegs,
-      String wikipediaUrl,
+      String? wikipediaUrl,
       int hypoallergenic,
-      String referenceImageId});
+      String? referenceImageId});
 
   $WeightCopyWith<$Res> get weight;
 }
@@ -154,9 +154,9 @@ class _$BreedCopyWithImpl<$Res, $Val extends Breed>
     Object? rex = null,
     Object? suppressedTail = null,
     Object? shortLegs = null,
-    Object? wikipediaUrl = null,
+    Object? wikipediaUrl = freezed,
     Object? hypoallergenic = null,
-    Object? referenceImageId = null,
+    Object? referenceImageId = freezed,
   }) {
     return _then(_value.copyWith(
       weight: null == weight
@@ -291,18 +291,18 @@ class _$BreedCopyWithImpl<$Res, $Val extends Breed>
           ? _value.shortLegs
           : shortLegs // ignore: cast_nullable_to_non_nullable
               as int,
-      wikipediaUrl: null == wikipediaUrl
+      wikipediaUrl: freezed == wikipediaUrl
           ? _value.wikipediaUrl
           : wikipediaUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       hypoallergenic: null == hypoallergenic
           ? _value.hypoallergenic
           : hypoallergenic // ignore: cast_nullable_to_non_nullable
               as int,
-      referenceImageId: null == referenceImageId
+      referenceImageId: freezed == referenceImageId
           ? _value.referenceImageId
           : referenceImageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 
@@ -355,9 +355,9 @@ abstract class _$$_BreedCopyWith<$Res> implements $BreedCopyWith<$Res> {
       int rex,
       int suppressedTail,
       int shortLegs,
-      String wikipediaUrl,
+      String? wikipediaUrl,
       int hypoallergenic,
-      String referenceImageId});
+      String? referenceImageId});
 
   @override
   $WeightCopyWith<$Res> get weight;
@@ -405,9 +405,9 @@ class __$$_BreedCopyWithImpl<$Res> extends _$BreedCopyWithImpl<$Res, _$_Breed>
     Object? rex = null,
     Object? suppressedTail = null,
     Object? shortLegs = null,
-    Object? wikipediaUrl = null,
+    Object? wikipediaUrl = freezed,
     Object? hypoallergenic = null,
-    Object? referenceImageId = null,
+    Object? referenceImageId = freezed,
   }) {
     return _then(_$_Breed(
       weight: null == weight
@@ -542,18 +542,18 @@ class __$$_BreedCopyWithImpl<$Res> extends _$BreedCopyWithImpl<$Res, _$_Breed>
           ? _value.shortLegs
           : shortLegs // ignore: cast_nullable_to_non_nullable
               as int,
-      wikipediaUrl: null == wikipediaUrl
+      wikipediaUrl: freezed == wikipediaUrl
           ? _value.wikipediaUrl
           : wikipediaUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       hypoallergenic: null == hypoallergenic
           ? _value.hypoallergenic
           : hypoallergenic // ignore: cast_nullable_to_non_nullable
               as int,
-      referenceImageId: null == referenceImageId
+      referenceImageId: freezed == referenceImageId
           ? _value.referenceImageId
           : referenceImageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -670,11 +670,11 @@ class _$_Breed implements _Breed {
   @override
   final int shortLegs;
   @override
-  final String wikipediaUrl;
+  final String? wikipediaUrl;
   @override
   final int hypoallergenic;
   @override
-  final String referenceImageId;
+  final String? referenceImageId;
 
   @override
   String toString() {
@@ -842,9 +842,9 @@ abstract class _Breed implements Breed {
       required final int rex,
       required final int suppressedTail,
       required final int shortLegs,
-      required final String wikipediaUrl,
+      required final String? wikipediaUrl,
       required final int hypoallergenic,
-      required final String referenceImageId}) = _$_Breed;
+      required final String? referenceImageId}) = _$_Breed;
 
   factory _Breed.fromJson(Map<String, dynamic> json) = _$_Breed.fromJson;
 
@@ -915,11 +915,11 @@ abstract class _Breed implements Breed {
   @override
   int get shortLegs;
   @override
-  String get wikipediaUrl;
+  String? get wikipediaUrl;
   @override
   int get hypoallergenic;
   @override
-  String get referenceImageId;
+  String? get referenceImageId;
   @override
   @JsonKey(ignore: true)
   _$$_BreedCopyWith<_$_Breed> get copyWith =>

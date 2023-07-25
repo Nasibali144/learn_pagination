@@ -40,9 +40,9 @@ _$_Breed _$$_BreedFromJson(Map<String, dynamic> json) => _$_Breed(
       rex: json['rex'] as int,
       suppressedTail: json['suppressed_tail'] as int,
       shortLegs: json['short_legs'] as int,
-      wikipediaUrl: json['wikipedia_url'] as String,
+      wikipediaUrl: json['wikipedia_url'] as String?,
       hypoallergenic: json['hypoallergenic'] as int,
-      referenceImageId: json['reference_image_id'] as String,
+      referenceImageId: json['reference_image_id'] as String?,
     );
 
 Map<String, dynamic> _$$_BreedToJson(_$_Breed instance) => <String, dynamic>{
