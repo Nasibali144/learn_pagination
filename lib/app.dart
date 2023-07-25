@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_pagination/screens/home_screen.dart';
+import 'package:learn_pagination/presentation/screens/home_screen.dart';
 
 class UserApp extends StatelessWidget {
   const UserApp({Key? key}) : super(key: key);

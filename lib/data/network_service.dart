@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:learn_pagination/core/apis.dart';
+import 'package:learn_pagination/core/param/apis.dart';
 
 abstract class Network {
   Future<String?> methodGet({required String api, Object? id, Map<String, String> headers = Api.headers, String baseUrl = Api.baseUrl,  Map<String, String>? query});
@@ -11,6 +11,7 @@ abstract class Network {
 }
 
 class HttpNetwork implements Network {
+  const HttpNetwork();
 
   @override
   Future<String?> methodGet({required String api, Object? id, Map<String, String> headers = Api.headers, String baseUrl = Api.baseUrl,  Map<String, String>? query}) async {
