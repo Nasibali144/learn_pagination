@@ -6,6 +6,7 @@ import 'package:learn_pagination/domain/models/image/image.dart';
 
 abstract class ImageRepository {
   Future<List<CatImage>> fetchAllCatImage(ImageParam param);
+  Future<String?> uploadImage(String path, String description);
 }
 
 class ImageRepositoryImplementation implements ImageRepository {
@@ -19,5 +20,14 @@ class ImageRepositoryImplementation implements ImageRepository {
     List data = jsonDecode(response);
     List<CatImage> images = data.map((item) => CatImage.fromJson(item)).toList();
     return images;
+  }
+
+  @override
+  Future<String?> uploadImage(String path, String description) async {
+    final response = await network.multipart(api: Api.apiUploadImage, filePath: path, body: {"sub_id": description});
+    if(response != null) {
+      return "Successfully uploaded!";
+    }
+    return null;
   }
 }

@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:learn_pagination/core/param/image_param.dart';
 import 'package:learn_pagination/core/service_locator.dart';
 import 'package:learn_pagination/domain/models/image/image.dart';
 import 'package:learn_pagination/presentation/screens/loading_screen.dart';
+import 'package:learn_pagination/presentation/screens/upload_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -45,6 +47,10 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() => isLoading = false);
   }
 
+  void goUploadScreen() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const UploadScreen()));
+  }
+
   /// UI => widgets
   @override
   Widget build(BuildContext context) {
@@ -54,23 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Stack(
         children: [
-          /*GridView.builder(
-            controller: controller,
-            padding: const EdgeInsets.all(20),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-            ),
-            itemCount: images.length,
-            itemBuilder: (context, index) {
-              final image = images[index];
-              return Image(
-                image: CachedNetworkImageProvider(image.url),
-                errorBuilder: (_, msg, __) => const Icon(Icons.warning_rounded),
-              );
-            },
-          ),*/
 
           MasonryGridView.builder(
               controller: controller,
@@ -103,6 +92,10 @@ class _HomeScreenState extends State<HomeScreen> {
           //   child: CircularProgressIndicator(),
           // ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: goUploadScreen,
+        child: const Icon(CupertinoIcons.paw),
       ),
     );
   }
